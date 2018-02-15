@@ -54,7 +54,6 @@ ActiveRecord::Schema.define(version: 20180214061519) do
   end
 
   create_table "navigations", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string "name"
     t.integer "page_id"
     t.string "order"
     t.datetime "created_at", null: false
@@ -64,6 +63,7 @@ ActiveRecord::Schema.define(version: 20180214061519) do
   create_table "pages", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "title"
     t.text "content"
+    t.string "handle"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

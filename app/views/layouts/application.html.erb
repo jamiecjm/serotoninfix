@@ -9,6 +9,11 @@
   </head>
 
   <body>
-    <%= yield %>
+  	<%= render 'layouts/header'%>
+  	<div class='main-content page-width'>
+  		<%= yield %>
+  	</div>
+    <%= render 'layouts/footer'%>
+    
   </body>
 </html>

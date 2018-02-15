@@ -12,4 +12,15 @@ ActiveAdmin.register Blog do
 #   permitted
 # end
 
+form do |f|
+	inputs do
+		input :title
+		input :cover_photo
+		input :content, input_html: {class: "fr-view"}
+		input :published?
+		input :published_at
+	end
+end
+
+
 end

@@ -1,7 +1,7 @@
 class CreateBlogs < ActiveRecord::Migration[5.1]
   def up
     create_table :blogs do |t|
-    	t.string	:title
+    	t.string	:title, unqiue: true
     	t.string	:cover_photo
     	t.text	:content
     	t.boolean	:published?

@@ -1,0 +1,24 @@
+nav {
+	color: white;
+	background-color: black;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 999;
+}
+
+nav ul{
+	list-style: none;
+	padding: 0;
+    margin: 0;
+}
+
+nav ul li{
+	float: right;
+    vertical-align: middle;
+    line-height: 50px;
+}
+
+nav ul li:first-child{
+	float: left;
+}
