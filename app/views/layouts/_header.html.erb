@@ -1,6 +1,6 @@
 <nav>
 	<ul class='page-width'>
-		<li><%= link_to 'Serotonin Fix', root_path %></li>
+		<li><%= link_to 'Home', root_path %></li>
 		<% Page.all.each do |p| %>
 			<li><%= link_to p.title, page_path(p.handle) %></li>
 		<% end %>

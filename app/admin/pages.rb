@@ -17,7 +17,7 @@ permit_params :title, :content
 form do |f|
 	inputs do
 		input :title
-		input :content, input_html: {class: "fr-view"}
+		input :content, input_html: {class: "tinymce"}
 	end
 
 	actions

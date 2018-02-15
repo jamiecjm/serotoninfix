@@ -16,10 +16,12 @@ form do |f|
 	inputs do
 		input :title
 		input :cover_photo
-		input :content, input_html: {class: "fr-view"}
+		input :content, input_html: {class: "tinymce"}
 		input :published?
 		input :published_at
 	end
+
+	actions
 end
 
 

@@ -56,5 +56,5 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'activeadmin'
 gem 'devise', git: 'https://github.com/plataformatec/devise' #, ref: '88e9a85'
 gem 'carrierwave'
-gem "wysiwyg-rails"
+gem 'tinymce-rails'
 gem 'rails_12factor', group: :production
