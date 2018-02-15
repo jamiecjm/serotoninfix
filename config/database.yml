@@ -49,6 +49,5 @@ test:
 #
 production:
   <<: *default
+  url: <%= ENV['CLEARDB_DATABASE_URL']%>
   database: serotoninfix_production
-  username: serotoninfix
-  password: <%= ENV['SEROTONINFIX_DATABASE_PASSWORD'] %>

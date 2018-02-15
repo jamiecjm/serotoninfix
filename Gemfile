@@ -57,4 +57,4 @@ gem 'activeadmin'
 gem 'devise', git: 'https://github.com/plataformatec/devise' #, ref: '88e9a85'
 gem 'carrierwave'
 gem "wysiwyg-rails"
-gem 'rails_12factor'
+gem 'rails_12factor', group: :production
