@@ -12,17 +12,17 @@ ActiveAdmin.register Blog do
 #   permitted
 # end
 
+permit_params :name, :handle
+
 form do |f|
+
+	f.semantic_errors *f.object.errors.keys
+
 	inputs do
-		input :title
-		input :cover_photo
-		input :content, input_html: {class: "tinymce"}
-		input :published?
-		input :published_at
+		input :name
 	end
 
 	actions
 end
-
 
 end

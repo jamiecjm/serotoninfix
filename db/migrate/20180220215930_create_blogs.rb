@@ -1,18 +1,18 @@
 class CreateBlogs < ActiveRecord::Migration[5.1]
   def up
     create_table :blogs do |t|
-    	t.string	:title, unqiue: true
-    	t.string	:cover_photo
-    	t.text	:content
-    	t.boolean	:published?
-    	t.datetime	:published_at
+    	t.string	:name
+    	t.string	:handle
 
       t.timestamps
     end
+
+    add_index :blogs, :name, :unique => true
+    add_index :blogs, :handle, :unique => true
   end
 
   def down
   	drop_table :blogs
   end
-  
+
 end

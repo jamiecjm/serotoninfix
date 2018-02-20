@@ -6,5 +6,7 @@ Rails.application.routes.draw do
   root 'pages#main'
 
   resources :pages
+  resources :blogs
+  resources :blog_posts
 
 end

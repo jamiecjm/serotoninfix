@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class PageTest < ActiveSupport::TestCase
+class BlogPostTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

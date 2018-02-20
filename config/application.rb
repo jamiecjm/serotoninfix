@@ -17,5 +17,7 @@ module Serotoninfix
 
     config.sass.load_paths << File.expand_path('../../lib/assets/stylesheets/')
 	config.sass.load_paths << File.expand_path('../../vendor/assets/stylesheets/')
+
+	config.autoload_paths += %W(#{config.root}/lib)
   end
 end

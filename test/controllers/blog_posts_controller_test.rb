@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class NavigationTest < ActiveSupport::TestCase
+class BlogPostsControllerTest < ActionDispatch::IntegrationTest
   # test "the truth" do
   #   assert true
   # end

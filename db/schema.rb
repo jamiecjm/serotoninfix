@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180214061519) do
+ActiveRecord::Schema.define(version: 20180220220112) do
 
   create_table "active_admin_comments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "namespace"
@@ -43,29 +43,28 @@ ActiveRecord::Schema.define(version: 20180214061519) do
     t.index ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true
   end
 
-  create_table "blogs", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "blog_posts", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer "blog_id"
     t.string "title"
-    t.string "cover_photo"
     t.text "content"
+    t.string "cover_photo"
+    t.string "handle"
     t.boolean "published?"
     t.datetime "published_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["blog_id"], name: "index_blog_posts_on_blog_id"
+    t.index ["handle"], name: "index_blog_posts_on_handle", unique: true
+    t.index ["title"], name: "index_blog_posts_on_title", unique: true
   end
 
-  create_table "navigations", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.integer "page_id"
-    t.string "order"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "pages", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string "title"
-    t.text "content"
+  create_table "blogs", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string "name"
     t.string "handle"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["handle"], name: "index_blogs_on_handle", unique: true
+    t.index ["name"], name: "index_blogs_on_name", unique: true
   end
 
 end
