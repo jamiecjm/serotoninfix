@@ -20,7 +20,7 @@ form do |f|
 		input :blog
 		input :title
 		input :content, input_html: {class: 'tinymce'}
-		input :cover_photo
+		input :cover_photo, as: :file
 		input :published?
 		input :published_at
 	end
