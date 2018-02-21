@@ -1,8 +1,3 @@
-//= require active_admin/base
-
-// Include other plugins.
-//= require tinymce-jquery
-
 tinyMCE.init({
     selector: 'textarea.tinymce',
     theme: 'modern',
