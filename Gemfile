@@ -59,4 +59,6 @@ gem 'carrierwave'
 gem 'tinymce-rails'
 gem 'rails_12factor', group: :production
 gem 'mini_magick'
+gem 'figaro'
+gem 'fog-aws'
 gem 'cloudinary'
