@@ -12,14 +12,14 @@ ActiveAdmin.register Blog do
 #   permitted
 # end
 
-permit_params :name, :handle
+permit_params :title, :handle
 
 form do |f|
 
 	f.semantic_errors *f.object.errors.keys
 
 	inputs do
-		input :name
+		input :title
 	end
 
 	actions

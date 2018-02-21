@@ -7,17 +7,12 @@ module Handleizer
 	end
 
 	def generate_handle
-		if self.handle.nil?
-			begin
-				reference = self.name 
-			rescue
-				reference = self.title
-			end
-			@resources = self.class.where(handle: reference.parameterize)
+		if self.title_changed?
+			@resources = self.class.where(handle: title.parameterize)
 			if @resources.blank?
-				self.handle = reference.parameterize
+				self.handle = title.parameterize
 			else
-				self.handle = reference.parameterize + "-#{@resources.length}"
+				self.handle = title.parameterize + "-#{@resources.length}"
 			end
 		end
 	end
