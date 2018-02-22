@@ -12,7 +12,40 @@ ActiveAdmin.register BlogPost do
 #   permitted
 # end
 
-permit_params :title, :content, :cover_photo, :handle, :published?, :published_at, :blog_id
+permit_params :title, :content, :cover_photo, :handle, :published?, :published_at, :blog_id, :tag_list
+
+index do
+	selectable_column
+	id_column
+	column :blog
+	column :title
+    column :handle
+    column :tag_list
+    column :published?
+    column :published_at
+    column :created_at
+    column :updated_at
+    actions
+end
+
+show do
+    attributes_table do
+      row :blog
+      row :title
+      row :content do |p|
+      	p.content.html_safe
+      end
+      row :cover_photo do |p|
+      	image_tag p.cover_photo.url
+      end
+      row :handle
+      row :tag_list
+      row :published?
+      row :published_at
+      row :created_at
+      row :updated_at
+    end
+end
 
 form do |f|
 	f.semantic_errors *f.object.errors.keys
@@ -21,8 +54,8 @@ form do |f|
 		input :title
 		input :content, input_html: {class: 'tinymce'}
 		input :cover_photo, as: :file
+		input :tag_list, as: :tags
 		input :published?
-		input :published_at
 	end
 
 	actions

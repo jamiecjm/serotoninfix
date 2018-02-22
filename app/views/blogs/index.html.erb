@@ -1,0 +1,42 @@
+<div class='page-panel blog-index'>
+	<%if @posts.blank?%>
+		<p>The author has not published any posts yet.</p>
+	<% else %>
+		<div class='first-post'>
+			<span class='blog-title'><%= @posts.first.blog.title %></span>
+			<span class='post-date'><%= @posts.first.published_at.strftime("%e %B %Y") %></span>
+			<h1><%= link_to @posts.first.title, blog_post_path(@posts.first.handle), class: 'main-text' %></h1>
+			<%= image_tag @posts.first.cover_photo.url, class: 'cover-photo' %>
+			<div class='post-content'><%= @posts.first.content.html_safe %></div>
+			<ul class='tags'>
+				<%@posts.first.tag_list.each do |t|%>
+					<li class='tag'>t</li>
+				<%end%>
+			</ul>
+		</div>
+		<hr/>
+		<div class='other-posts'>
+			<%@posts[1..-1].each do |p|%>
+				<div class='post-block'>
+					<% if !p.cover_photo.file.nil? %>
+					<%= image_tag p.cover_photo.url, class: 'cover-photo' %>
+					<% end %>
+					<div class='post-text-block'>
+						<span class='blog-title'><%= p.blog.title %></span>
+						<span class='post-date'><%= p.published_at.strftime("%e %B %Y") %></span>
+						<h1><%= link_to p.title, blog_post_path(p.handle), class: 'main-text' %></h1>
+						<% content = ActionView::Base.full_sanitizer.sanitize(p.content.html_safe) %>
+						<p class='post-content'><%= truncate(content, length: 500, seperator: ' ') { link_to '(Read More)', blog_post_path(p.handle) } %></p>
+						<ul class='tags'>
+							<%p.tag_list.each do |t|%>
+								<li class='tag'><%= t %></li>
+							<%end%>
+						</ul>
+					</div>						
+				</div>
+				<hr/>
+			<%end%>		
+		</div>
+	<%end%>
+</div>
+

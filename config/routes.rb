@@ -8,5 +8,6 @@ Rails.application.routes.draw do
   resources :pages
   resources :blogs
   resources :blog_posts
+  resources :recipes
 
 end

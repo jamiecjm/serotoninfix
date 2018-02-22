@@ -1,0 +1,14 @@
+<nav>
+	<ul class='container'>
+		<li><%= link_to 'Home', root_path %></li>
+		<div class='right-nav'>
+			<%@navi_blogs.each do |b|%>
+			<li><a><%= fa_icon 'search' %></a></li>
+			<li><a>About</a></li>
+			<li><%= link_to 'Blog', blogs_path%></li>
+			<li><%= link_to 'Recipe', recipes_path %></li>
+			<li><a>Contact</a></li>
+			<%end%>
+		</div>
+	</ul>
+</nav>

@@ -1,0 +1,29 @@
+.tags {
+  list-style: none;
+  margin: 0;
+  overflow: hidden; 
+  padding: 0;
+}
+
+.tags li {
+  float: left; 
+}
+
+.tag {
+  background: rgba(46,98,175,0.08);
+  border: 1px solid rgba(46,98,175,0);
+  border-radius: 3px;
+  color: #2e62af;
+  display: inline-block;
+  height: 26px;
+  line-height: 22px;
+  padding: 0 20px;
+  position: relative;
+  margin: 0 3px 10px 0;
+  -webkit-transition: color 0.2s;
+}
+
+.tags li:hover{
+  color: white;
+  background-color: #2e62af;
+}

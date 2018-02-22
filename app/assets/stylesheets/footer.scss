@@ -1,5 +1,22 @@
 footer{
-    margin-top: 50px;
-    margin-bottom: 50px;
+    padding-top: 50px;
+    padding-bottom: 50px;
     text-align: center;
+    background-color: #0F346C;
+    color: white;
+}
+
+footer p:not(.copyright-text) {
+	font-size: 18px;
+	font-weight: 500;
+}
+
+footer .social-icons *{
+	color: #BCBCBC;
+	font-size: 30px;
+    margin: 0 5px;
+}
+
+.follow-me{
+	margin-bottom: 5px;
 }

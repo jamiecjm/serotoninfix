@@ -1,8 +1,0 @@
-<nav>
-	<ul class='page-width'>
-		<li><%= link_to 'Home', root_path %></li>
-		<%@navi_blogs.each do |b|%>
-		<li><%= link_to b.title, blog_path(b.handle)%></li>
-		<%end%>
-	</ul>
-</nav>
