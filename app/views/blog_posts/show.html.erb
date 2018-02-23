@@ -2,7 +2,7 @@
 	<div class='first-post'>
 		<span class='blog-title'><%=@post.blog.title %></span>
 		<span class='post-date'><%= @post.published_at.strftime("%e %B %Y") %></span>
-		<h1 class= 'main-text'><%= @post.title %></h1>
+		<h1 class= 'page-title'><%= @post.title %></h1>
 		<%= image_tag @post.cover_photo.url, class: 'cover-photo' %>
 		<div class='post-content'><%= @post.content.html_safe %></div>
 		<ul class='tags'>

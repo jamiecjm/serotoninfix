@@ -3,7 +3,7 @@ class BlogPost < ApplicationRecord
 
 	belongs_to :blog
 
-	mount_uploader :cover_photo, PhotoUploader
+	mount_uploader :cover_photo, PictureUploader
 
 	before_save :set_published_date
 

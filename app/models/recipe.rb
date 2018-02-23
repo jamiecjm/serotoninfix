@@ -3,7 +3,7 @@ class Recipe < ApplicationRecord
 	has_many :ingredients, dependent: :destroy
 	has_many :instructions, dependent: :destroy
 
-	mount_uploader :cover_photo, PhotoUploader
+	mount_uploader :cover_photo, PictureUploader
 
 	acts_as_ordered_taggable
 
