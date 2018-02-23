@@ -1,9 +1,11 @@
-<div class='image-grid'>
-	<% 50.times do %>
-	<div class='image-grid-cell'>
-		<img src='https://thumb1.shutterstock.com/display_pic_with_logo/1535435/446808100/stock-photo-assorted-chinese-food-set-chinese-noodles-fried-rice-dumplings-peking-duck-dim-sum-spring-446808100.jpg'>
-		<div class='overlay'><span class='text-overlay image-grid-text'>Yummy Chinese Food</span></div>
-	</div>
-
-	<% end %>
+<div class='image-grid row'>
+	<% @recipes.each do |r|%>
+	<%=link_to recipe_path(r.handle), class: 'image-grid-cell col-xs-6 col-sm-4 col-md-4 col-xl-3' do %>
+		<div class='image-grid-inner'>
+			<%= image_tag r.cover_photo.url %>
+			<div class='overlay'><span class='text-overlay image-grid-text'><%=r.title%></span></div>
+		</div>
+	<%end%>
+	<%end%>
+	<div class="col-1 my-sizer-element"></div>
 </div>

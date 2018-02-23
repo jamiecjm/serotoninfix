@@ -3,24 +3,25 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
-.post-show h1{
+.blog_posts-show h1{
 	margin-top: 10px;
 	line-height: 1.2em;
 	font-size: 2.5em;
 }
 
-.post-show .blog-title{
+.blog_posts-show .blog-title{
 	font-size: 11px;
     text-transform: uppercase;
     font-weight: 600;
     margin-right: 10px;
 }
 
-.post-show .cover-photo{
+.blog_posts-show .cover-photo{
 	margin-bottom: 20px;
+	max-height: 400px;
 }
 
-.post-show p{
+.blog_posts-show p{
     font-size: 15px; 
     line-height: 26px;
 

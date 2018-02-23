@@ -35,7 +35,7 @@ nav ul li:last-child{
 nav a{
     text-decoration: none !important;
     font-size: 18px;
-    color: #0F346C !important;
+    color: #112E61 !important;
     font-weight: 500;
 }
 
@@ -57,6 +57,10 @@ header {
 .header-text {
     position: relative;
     z-index: 998;
+}
+
+header h3{
+    font-weight: 500;
 }
 
 /*.full-background{

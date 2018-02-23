@@ -1,0 +1,24 @@
+<div class='row description'>
+	<h1 class='page-title'><%=@recipe.title%></h1>
+	<%=image_tag @recipe.cover_photo.url, class: 'cover_photo'%>
+	<p><%= @recipe.description %></p>
+</div>
+<hr/>
+<div class='row ingredients'>
+	<h2>Ingredients</h2>
+	<ul>
+		<%@recipe.ingredients.order('ingredients.order').each do |r|%>
+			<li><%=r.description%></li>
+		<%end%>
+	</ul>
+</div>
+<hr/>
+<div class='row instructions'>
+	<h2>Instructions</h2>
+	<ol>
+		<%@recipe.instructions.order('instructions.order').each do |r|%>
+			<li><%=r.description%></li>
+		<%end%>
+	</ol>
+</div>
+<hr/>

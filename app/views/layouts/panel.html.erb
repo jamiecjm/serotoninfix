@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <%= csrf_meta_tags %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Shuffle/5.1.0/shuffle.min.js" integrity="sha256-HzbN8XxQ2GraExZCU6Ulxx8BNdkWavHzpllqqMJ5Zps=" crossorigin="anonymous"></script>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
@@ -21,7 +20,9 @@
     
   	<%= render 'layouts/nav'%>
   	<div class='main-content container <%=@page_id%>'>
-  		<%= yield %>
+      <div class='page-panel'>
+  		  <%= yield %>
+      </div>
   	</div>
     <%= render 'layouts/footer'%>
     
