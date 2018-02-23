@@ -2,7 +2,7 @@
 	<%if @posts.blank?%>
 		<p>The author has not published any posts yet.</p>
 	<% else %>
-		<div class='first-post'>
+<!-- 		<div class='first-post'>
 			<span class='blog-title'><%= @posts.first.blog.title %></span>
 			<span class='post-date'><%= @posts.first.published_at.strftime("%e %B %Y") %></span>
 			<h1><%= link_to @posts.first.title, blog_post_path(@posts.first.handle), class: 'page-title' %></h1>
@@ -14,14 +14,16 @@
 				<%end%>
 			</ul>
 		</div>
-		<hr/>
+		<hr/> -->
 		<div class='other-posts'>
-			<%@posts[1..-1].each do |p|%>
-				<div class='post-block'>
+			<%@posts[0..-1].each do |p|%>
+				<div class='post-block row'>
 					<% if !p.cover_photo.file.nil? %>
-					<%= image_tag p.cover_photo.url, class: 'cover-photo' %>
+					<div class='post-img-block col-xs-12 col-sm-4'>
+						<%= image_tag p.cover_photo.url, class: 'cover-photo' %>	
+					</div>
 					<% end %>
-					<div class='post-text-block'>
+					<div class='post-text-block col-xs-12 col-sm-8'>
 						<span class='blog-title'><%= p.blog.title %></span>
 						<span class='post-date'><%= p.published_at.strftime("%e %B %Y") %></span>
 						<h1><%= link_to p.title, blog_post_path(p.handle), class: 'page-title' %></h1>
@@ -34,7 +36,7 @@
 						</ul>
 					</div>						
 				</div>
-				<hr/>
+				<hr style='clear: both;'/>
 			<%end%>		
 		</div>
 	<%end%>

@@ -6,7 +6,7 @@ class RecipesController < ApplicationController
 
 	def show
 		@recipe = Recipe.find_by(handle: params[:id])
-		render :show, layout: 'panel'
+		# render :show, layout: 'panel'
 	end
 
 end

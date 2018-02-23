@@ -19,7 +19,7 @@ instructions_attributes: [:id, :recipe_id, :_destroy, :description, :order]
 form do |f|
 	f.inputs do
 	  f.input :title
-	  f.input :description
+	  f.input :description, input_html: {class: 'tinymce'}
 	  f.input :cover_photo, as: :file
 	  f.has_many :ingredients, sortable: :order, sortable_start: 1, :allow_destroy => true do |t|
 	  	t.input :order, input_html: {disabled: true}

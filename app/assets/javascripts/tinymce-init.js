@@ -5,3 +5,4 @@ tinyMCE.init({
 	toolbar1: 'formatselect | bold italic strikethrough forecolor backcolor | link | alignleft aligncenter alignright alignjustify  | numlist bullist outdent indent  | removeformat',
 	image_advtab: true
  });
+

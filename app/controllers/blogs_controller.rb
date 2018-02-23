@@ -2,7 +2,7 @@ class BlogsController < ApplicationController
 
 	def index
 		@posts = BlogPost.includes(:blog).where(published?: true).order('published_at DESC')
-		render :index, layout: 'panel'
+		# render :index, layout: 'panel'
 	end
 
 	def show

@@ -20,8 +20,11 @@
     </header>
     
   	<%= render 'layouts/nav'%>
-  	<div class='main-content container <%=@page_id%>'>
-  		<%= yield %>
+  	<div class='main-content container'>
+      <div class='<%=@page_id%>'>
+        <%= yield %>
+      </div>
+  	
   	</div>
     <%= render 'layouts/footer'%>
     

@@ -20,8 +20,10 @@
     
   	<%= render 'layouts/nav'%>
   	<div class='main-content container <%=@page_id%>'>
-      <div class='page-panel'>
-  		  <%= yield %>
+      <div class='<%=@page_id%>'>
+        <div class='page-panel'>
+          <%= yield %>
+        </div>
       </div>
   	</div>
     <%= render 'layouts/footer'%>

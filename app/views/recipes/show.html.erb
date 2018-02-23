@@ -1,7 +1,7 @@
 <div class='row description'>
 	<h1 class='page-title'><%=@recipe.title%></h1>
 	<%=image_tag @recipe.cover_photo.url, class: 'cover_photo'%>
-	<p><%= @recipe.description %></p>
+	<p><%= @recipe.description.html_safe %></p>
 </div>
 <hr/>
 <div class='row ingredients'>
