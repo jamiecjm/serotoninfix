@@ -12,7 +12,7 @@ ActiveAdmin.register Recipe do
 #   permitted
 # end
 
-permit_params :title, :description, :cover_photo, 
+permit_params :title, :description, :cover_photo, :tag_list,
 ingredients_attributes: [:id, :recipe_id, :_destroy, :description, :order], 
 instructions_attributes: [:id, :recipe_id, :_destroy, :description, :order]
 

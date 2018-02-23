@@ -2,6 +2,11 @@
 	<h1 class='page-title'><%=@recipe.title%></h1>
 	<%=image_tag @recipe.cover_photo.url, class: 'cover_photo'%>
 	<p><%= @recipe.description.html_safe %></p>
+	<ul class='tags'>
+	<%@recipe.tag_list.each do |t|%>
+		<li class='tag'><%= t %></li>
+	<%end%>
+</ul>
 </div>
 <hr/>
 <div class='row ingredients'>

@@ -2,37 +2,27 @@
   <!-- Indicators -->
   <ol class="carousel-indicators">
     <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-    <li data-target="#myCarousel" data-slide-to="1"></li>
-    <li data-target="#myCarousel" data-slide-to="2"></li>
+    <%(Recipe.all.length-1).times do |x|%>
+    <li data-target="#myCarousel" data-slide-to="<%=x%>"></li>
+    <%end%>
   </ol>
 
   <!-- Wrapper for slides -->
   <div class="carousel-inner">
-
-    <div class="item active">
-      <img src="https://www.w3schools.com/bootstrap/la.jpg" alt="Los Angeles" style="width:100%;">
-      <div class="carousel-caption">
-        <h2>Los Angeles</h2>
+    <div class="item active" style="background-image: url(<%=Recipe.first.cover_photo.url%>)">
+<!--       <div class="carousel-caption">
+        <h2><%=Recipe.first.title%></h2>
         <p class= 'carousel-text'>LA is always so much fun!</p>
-      </div>
+      </div> -->
     </div>
-
-    <div class="item">
-      <img src="https://www.w3schools.com/bootstrap/chicago.jpg" alt="Chicago" style="width:100%;">
-      <div class="carousel-caption">
-        <h2>Chicago</h2>
-        <p class= 'carousel-text'>Thank you, Chicago!</p>
-      </div>
+    <%Recipe.all[1..-1].each do |r|%>
+    <div class="item" style="background-image: url(<%=r.cover_photo.url%>)">
+<!--       <div class="carousel-caption">
+        <h2><%=r.title%></h2>
+        <p class= 'carousel-text'>LA is always so much fun!</p>
+      </div> -->
     </div>
-  
-    <div class="item">
-      <img src="https://www.w3schools.com/bootstrap/ny.jpg" alt="New York" style="width:100%;">
-      <div class="carousel-caption">
-        <h2>New York</h2>
-        <p class= 'carousel-text'>We love the Big Apple!</p>
-      </div>
-    </div>
-
+    <%end%>
   </div>
 
   <!-- Left and right controls -->
