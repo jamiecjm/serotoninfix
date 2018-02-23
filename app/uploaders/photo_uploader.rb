@@ -8,10 +8,7 @@ class PhotoUploader < CarrierWave::Uploader::Base
   # Use local storage if in development or test
   if Rails.env.development? || Rails.env.test?
     storage = :file
-  end
-  
-  # Use AWS storage if in production
-  if Rails.env.production?
+  else
     storage = :fog
   end
 
